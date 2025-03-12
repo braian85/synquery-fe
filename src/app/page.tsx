@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Container, Typography, Grid, Box, Tabs, Tab } from '@mui/material';
+import { Container, Typography, Box, Tabs, Tab } from '@mui/material';
 import ChatInterface from '@/components/ChatInterface';
 import BookingList from '@/components/BookingList';
 
@@ -30,14 +30,10 @@ function TabPanel(props: TabPanelProps) {
 
 export default function Home() {
   const [tabValue, setTabValue] = useState(0);
-  const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const [refreshTrigger] = useState(0);
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);
-  };
-
-  const handleBookingCreated = () => {
-    setRefreshTrigger((prev) => prev + 1);
   };
 
   return (
